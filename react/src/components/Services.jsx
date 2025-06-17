@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 //
 import AIImage from "../assets/AI.svg";
 import CloudCompImage from "../assets/cloudComp.svg";
-import MobileDevImage from "../assets/mobiledev.svg";
+import MobileDevImage from "../assets/mobileDev.svg";
 import BackendImage from "../assets/backend.svg";
 import WebDevImage from "../assets/webdev.svg";
 import TechConsultImage from "../assets/techconsult.svg";
