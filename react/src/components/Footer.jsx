@@ -1,7 +1,13 @@
+import { motion } from "motion/react";
 import Logo from "../assets/footerlogo.png";
 function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-neutral-900">
+    <motion.footer
+      className="relative overflow-hidden bg-neutral-900"
+      initial={{ transform: "translateY(90%)" }}
+      transition={{ duration: 1.2 }}
+      whileInView={{ transform: "translateY(0)" }}
+    >
       <svg
         className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"
@@ -110,7 +116,7 @@ function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
 

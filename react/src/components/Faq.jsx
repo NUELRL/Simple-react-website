@@ -1,14 +1,22 @@
+import { motion } from "motion/react";
+
 function Faq() {
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div className="max-w-2xl mx-auto mb-10 lg:mb-14">
-        <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">
+        <motion.h2
+          className="text-2xl font-bold md:text-4xl md:leading-tight"
+          initial={{ transform: "translateX(-50vw)" }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ transform: "translateX(0)" }}
+        >
           You might be wondering...
-        </h2>
+        </motion.h2>
       </div>
 
       <div className="max-w-2xl mx-auto divide-y divide-gray-200">
         <FaqTag
+          delay={0.2}
           question="What service do you offer?"
           answer="We offer a wide range of services including digital
                 transformation consulting, software development, cloud computing
@@ -16,6 +24,7 @@ function Faq() {
         />
 
         <FaqTag
+          delay={0.4}
           question="How experienced is your team?"
           answer="We have a diverse team of highly skilled experts in various
                 domains, ensuring that we can deliver exceptional results for
@@ -23,6 +32,7 @@ function Faq() {
         />
 
         <FaqTag
+          delay={0.6}
           question="Do you provide ongoing support after project completion?"
           answer="Yes, we offer comprehensive post-project support and maintenance
                 services. We are committed to long-term partnerships and provide
@@ -31,11 +41,13 @@ function Faq() {
         />
 
         <FaqTag
+          delay={0.8}
           question="How do we get started with your services?"
           answer="Getting started is easy! Simply reach out to us through our website or contact our team directly."
         />
 
         <FaqTag
+          delay={1}
           question="What is your approach to project management?"
           answer="We use agile methodologies to manage our projects, ensuring that
                 they are delivered on time, within budget, and to the
@@ -48,9 +60,14 @@ function Faq() {
 
 export default Faq;
 
-function FaqTag({ question, answer }) {
+function FaqTag({ question, answer, delay }) {
   return (
-    <div className="py-8 first:pt-0 last:pb-0">
+    <motion.div
+      className="py-8 first:pt-0 last:pb-0"
+      initial={{ transform: "translateX(-50vw)" }}
+      transition={{ duration: 1.2 + delay }}
+      whileInView={{ transform: "translateX(0)" }}
+    >
       <div className="flex gap-x-5">
         <svg
           className="shrink-0 mt-1 size-6 text-gray-500"
@@ -74,6 +91,6 @@ function FaqTag({ question, answer }) {
           <p className="mt-1 text-gray-500">{answer}</p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

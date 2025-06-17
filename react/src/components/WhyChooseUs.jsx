@@ -1,3 +1,8 @@
+import { motion } from "motion/react";
+///
+///
+///
+
 import MonitoringIcon from "../assets/monitoring.svg";
 import BoltIcon from "../assets/electricbolt.svg";
 import PalleteIcon from "../assets/pallete.svg";
@@ -11,27 +16,42 @@ function WhyChooseUs() {
   return (
     <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto mt-25">
       <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-        <h2 className="text-3xl lg:text-4xl text-gray-800 font-bold">
+        <motion.h2
+          className="text-3xl lg:text-4xl text-gray-800 font-bold"
+          initial={{ transform: "translateX(-50vw)" }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ transform: "translateX(0)" }}
+        >
           Why Choose Us
-        </h2>
-        <p className="mt-3 text-gray-800">
+        </motion.h2>
+        <motion.p
+          className="mt-3 text-gray-800"
+          initial={{ transform: "translateX(-50vw)" }}
+          transition={{ duration: 1.6 }}
+          whileInView={{ transform: "translateX(0)" }}
+        >
           Reliable, scalable, and ready for any challenge.
-        </p>
+        </motion.p>
       </div>
 
-      <div className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-8">
+      <motion.div
+        className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-8"
+        initial={{ gap: "1000px" }}
+        transition={{ duration: 1.2 }}
+        whileInView={{ gap: 0 }}
+      >
         <IconWithText src={BoltIcon}>High Performance</IconWithText>
         <IconWithText src={MonitoringIcon}>
           Scalable Infrastructure
         </IconWithText>
         <IconWithText src={PalleteIcon}>Modular Design</IconWithText>
-      </div>
+      </motion.div>
 
       <div className="mt-10 sm:mt-20 grid grid-cols-2 md:grid-cols-4 items-center gap-2 sm:gap-6 lg:gap-8">
-        <FeatureImg src={PerformanceImage} />
-        <FeatureImg src={ScalableInfrastructureImage} />
-        <FeatureImg src={ModularDesignImage} />
-        <FeatureImg src={ReliabilityImage} />
+        <FeatureImg src={PerformanceImage} delay={0.8} />
+        <FeatureImg src={ScalableInfrastructureImage} delay={0.6} />
+        <FeatureImg src={ModularDesignImage} delay={0.4} />
+        <FeatureImg src={ReliabilityImage} delay={0.2} />
       </div>
     </div>
   );
@@ -63,14 +83,19 @@ function IconWithText({ src, children }) {
     </div>
   );
 }
-function FeatureImg({ src }) {
+function FeatureImg({ src, delay }) {
   return (
-    <div className="w-full h-32">
+    <motion.div
+      className="w-full h-32"
+      initial={{ transform: "translatey(30vh)", opacity: 0 }}
+      transition={{ duration: 1.2 - delay }}
+      whileInView={{ transform: "translatey(0)", opacity: 1 }}
+    >
       <img
         src={src}
         className="size-full object-cover object-center rounded-xl"
         alt="Features Image"
       />
-    </div>
+    </motion.div>
   );
 }

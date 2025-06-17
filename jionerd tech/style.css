@@ -1,7 +1,5 @@
-.mad{
-display: inline;
-display: flex;
- float:left;
+.mad {
+  display: inline;
+  display: flex;
+  float: left;
 }
-
-

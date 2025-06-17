@@ -1,6 +1,19 @@
+import { motion } from "motion/react";
+
+const transition = {
+  duration: 0.8,
+  delay: 0.5,
+  ease: [0, 0.71, 0.2, 1.01],
+};
+
 function Logo() {
   return (
-    <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <motion.div
+      className="max-w-7xl mx-auto flex items-center justify-between"
+      initial={{ transform: "translateX(-100vw)" }}
+      animate={{ transform: "translateX(0)" }}
+      transition={transition}
+    >
       <a
         href="#"
         className="flex items-center gap-2 text-2xl font-medium text-cloud-dark"
@@ -11,7 +24,7 @@ function Logo() {
           width="150px"
         />
       </a>
-    </div>
+    </motion.div>
   );
 }
 
