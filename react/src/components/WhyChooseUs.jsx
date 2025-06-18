@@ -18,17 +18,17 @@ function WhyChooseUs() {
       <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
         <motion.h2
           className="text-3xl lg:text-4xl text-gray-800 font-bold"
-          initial={{ transform: "translateX(-50vw)" }}
+          initial={{ x: "-50vw" }}
+          whileInView={{ x: 0 }}
           transition={{ duration: 1.2 }}
-          whileInView={{ transform: "translateX(0)" }}
         >
           Why Choose Us
         </motion.h2>
         <motion.p
           className="mt-3 text-gray-800"
-          initial={{ transform: "translateX(-50vw)" }}
+          initial={{ x: "-50vw" }}
+          whileInView={{ x: 0 }}
           transition={{ duration: 1.6 }}
-          whileInView={{ transform: "translateX(0)" }}
         >
           Reliable, scalable, and ready for any challenge.
         </motion.p>
@@ -36,9 +36,9 @@ function WhyChooseUs() {
 
       <motion.div
         className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-8"
-        initial={{ gap: "1000px" }}
-        transition={{ duration: 1.2 }}
+        initial={{ gap: "500px" }}
         whileInView={{ gap: 0 }}
+        transition={{ duration: 1.2 }}
       >
         <IconWithText src={BoltIcon}>High Performance</IconWithText>
         <IconWithText src={MonitoringIcon}>
@@ -64,7 +64,7 @@ function IconWithText({ src, children }) {
     <div className="text-center">
       <img
         src={src}
-        className="shrink-0 size-7 md:size-9 mx-auto text-gray-800 w-[100px] h-[140px]"
+        className="shrink-0 size-9 md:size-9 mx-auto text-gray-800 md:w-[100px] h-[140px]"
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -78,7 +78,9 @@ function IconWithText({ src, children }) {
         rx="2"
       />
       <div className="mt-2 sm:mt-6">
-        <h3 className="sm:text-lg font-semibold text-gray-800">{children}</h3>
+        <h3 className="sm:text-lg font-semibold text-gray-800 text-center">
+          {children}
+        </h3>
       </div>
     </div>
   );
@@ -87,9 +89,9 @@ function FeatureImg({ src, delay }) {
   return (
     <motion.div
       className="w-full h-32"
-      initial={{ transform: "translatey(30vh)", opacity: 0 }}
+      initial={{ y: "30vh", opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 1.2 - delay }}
-      whileInView={{ transform: "translatey(0)", opacity: 1 }}
     >
       <img
         src={src}

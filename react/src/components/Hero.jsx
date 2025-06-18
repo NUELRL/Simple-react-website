@@ -7,9 +7,9 @@ function Hero() {
         <div className="mt-5 max-w-xl text-center mx-auto">
           <motion.h1
             className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl"
-            initial={{ transform: "translateY(40vh)", opacity: 0 }}
+            initial={{ y: "40vh", opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "linear" }}
-            whileInView={{ transform: "translatey(0)", opacity: 1 }}
           >
             UNLEASH THE POWER OF TECH 💪
           </motion.h1>
@@ -17,9 +17,9 @@ function Hero() {
 
         <motion.div
           className="mt-5 max-w-3xl text-center mx-auto"
-          initial={{ transform: "translatey(20vw)", opacity: 0 }}
+          initial={{ y: "20vw", opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: "linear" }}
-          whileInView={{ transform: "translatey(0)", opacity: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
         >
           <p className="text-lg text-gray-600">
             Tired of spending time and money on unreliable developers? Discover
@@ -33,9 +33,9 @@ function Hero() {
             href="#"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
-            initial={{ transform: "translatey(10vw)", opacity: 0 }}
+            initial={{ y: "10vw", opacity: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "linear" }}
-            whileInView={{ transform: "translatey(0)", opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
           >
             GET STARTED
           </motion.a>

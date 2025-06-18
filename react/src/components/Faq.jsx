@@ -6,9 +6,9 @@ function Faq() {
       <div className="max-w-2xl mx-auto mb-10 lg:mb-14">
         <motion.h2
           className="text-2xl font-bold md:text-4xl md:leading-tight"
-          initial={{ transform: "translateX(-50vw)" }}
+          initial={{ x: "-50vw" }}
+          whileInView={{ x: 0 }}
           transition={{ duration: 1.2 }}
-          whileInView={{ transform: "translateX(0)" }}
         >
           You might be wondering...
         </motion.h2>
@@ -64,9 +64,9 @@ function FaqTag({ question, answer, delay }) {
   return (
     <motion.div
       className="py-8 first:pt-0 last:pb-0"
-      initial={{ transform: "translateX(-50vw)" }}
+      initial={{ x: "-50vw" }}
+      whileInView={{ x: 0 }}
       transition={{ duration: 1.2 + delay }}
-      whileInView={{ transform: "translateX(0)" }}
     >
       <div className="flex gap-x-5">
         <svg

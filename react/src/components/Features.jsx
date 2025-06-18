@@ -24,18 +24,18 @@ function Features() {
             <div className="space-y-2 md:space-y-4">
               <motion.h2
                 className="font-bold text-3xl lg:text-4xl text-gray-800"
-                initial={{ transform: "translateX(20vw)", opacity: 0 }}
+                initial={{ x: "20vw", opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.3, ease: "linear" }}
-                whileInView={{ transform: "translateX(0)", opacity: 1 }}
               >
                 Build your dedicated augmented team to scale up with confidence
                 💯
               </motion.h2>
               <motion.p
                 className="text-gray-500"
-                initial={{ transform: "translateX(20vw)", opacity: 0 }}
+                initial={{ x: "20vw", opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.6, ease: "linear" }}
-                whileInView={{ transform: "translateX(0)", opacity: 1 }}
               >
                 As ideas evolve and customer expectations increase post-MVP, we
                 provide a specialized team focused on rapidly scaling and
@@ -45,9 +45,9 @@ function Features() {
 
             <motion.ul
               className="space-y-2 sm:space-y-4"
-              initial={{ transform: "translateX(20vw)", opacity: 0 }}
+              initial={{ x: "20vw", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.9, ease: "linear" }}
-              whileInView={{ transform: "translateX(0)", opacity: 1 }}
             >
               <Listitem>Continuous feedback integration</Listitem>
               <Listitem>Agile and flexible team structure</Listitem>

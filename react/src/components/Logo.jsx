@@ -10,8 +10,8 @@ function Logo() {
   return (
     <motion.div
       className="max-w-7xl mx-auto flex items-center justify-between"
-      initial={{ transform: "translateX(-100vw)" }}
-      animate={{ transform: "translateX(0)" }}
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
       transition={transition}
     >
       <a

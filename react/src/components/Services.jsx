@@ -15,9 +15,9 @@ function Services() {
     <div>
       <motion.h2
         className="text-2xl font-bold sm:text-3xl text-center mt-25"
-        initial={{ transform: "translateX(-50vw)" }}
+        initial={{ x: "-50vw" }}
+        whileInView={{ x: 0 }}
         transition={{ duration: 1.2 }}
-        whileInView={{ transform: "translateX(0)" }}
       >
         OUR SERVICES
       </motion.h2>
