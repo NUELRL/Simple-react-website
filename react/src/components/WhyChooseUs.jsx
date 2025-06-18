@@ -34,18 +34,17 @@ function WhyChooseUs() {
         </motion.p>
       </div>
 
-      <motion.div
-        className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-8"
-        initial={{ gap: "500px" }}
-        whileInView={{ gap: 0 }}
-        transition={{ duration: 1.2 }}
-      >
-        <IconWithText src={BoltIcon}>High Performance</IconWithText>
-        <IconWithText src={MonitoringIcon}>
+      <div className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-8">
+        <IconWithText src={BoltIcon} delay={0.8}>
+          High Performance
+        </IconWithText>
+        <IconWithText src={MonitoringIcon} delay={0.6}>
           Scalable Infrastructure
         </IconWithText>
-        <IconWithText src={PalleteIcon}>Modular Design</IconWithText>
-      </motion.div>
+        <IconWithText src={PalleteIcon} delay={0.4}>
+          Modular Design
+        </IconWithText>
+      </div>
 
       <div className="mt-10 sm:mt-20 grid grid-cols-2 md:grid-cols-4 items-center gap-2 sm:gap-6 lg:gap-8">
         <FeatureImg src={PerformanceImage} delay={0.8} />
@@ -59,9 +58,14 @@ function WhyChooseUs() {
 
 export default WhyChooseUs;
 
-function IconWithText({ src, children }) {
+function IconWithText({ src, children, delay }) {
   return (
-    <div className="text-center">
+    <motion.div
+      className="text-center"
+      initial={{ y: "10vh", opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1.2 - delay }}
+    >
       <img
         src={src}
         className="shrink-0 size-9 md:size-9 mx-auto text-gray-800 md:w-[100px] h-[140px]"
@@ -82,7 +86,7 @@ function IconWithText({ src, children }) {
           {children}
         </h3>
       </div>
-    </div>
+    </motion.div>
   );
 }
 function FeatureImg({ src, delay }) {
