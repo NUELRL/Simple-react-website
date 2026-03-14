@@ -30,43 +30,45 @@ const itemVariants = {
 
 function WhyChooseUs() {
   return (
-    <div className="max-w-[85rem] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 mx-auto my-8 sm:my-12">
-      <div className="mx-auto max-w-2xl mb-6 sm:mb-10 text-center">
-        <motion.h2
-          className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-bold"
-          {...fadeIn(0)}
-        >
-          Why Choose Us
-        </motion.h2>
-        <motion.p
-          className="mt-2 text-gray-600 text-sm sm:text-base"
-          {...fadeIn(0.1)}
-        >
-          Reliable, scalable, and ready for any challenge.
-        </motion.p>
-      </div>
+    <section className="w-full px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24 mt-32 sm:mt-40 lg:mt-48 mb-16 sm:mb-20 lg:mb-24">
+      <div className="max-w-[85rem] mx-auto">
 
-      <motion.div
-        className="mx-auto max-w-3xl grid grid-cols-3 gap-4 lg:gap-8"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        <IconWithText src={BoltIcon}>High Performance</IconWithText>
-        <IconWithText src={MonitoringIcon}>
-          Scalable Infrastructure
-        </IconWithText>
-        <IconWithText src={PalleteIcon}>Modular Design</IconWithText>
-      </motion.div>
+        <div className="mx-auto max-w-2xl mb-10 sm:mb-14 text-center">
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 font-bold"
+            {...fadeIn(0)}
+          >
+            Why Choose Us
+          </motion.h2>
+          <motion.p
+            className="mt-3 text-gray-600 text-sm sm:text-base"
+            {...fadeIn(0.1)}
+          >
+            Reliable, scalable, and ready for any challenge.
+          </motion.p>
+        </div>
 
-      <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 items-center gap-2 sm:gap-4 lg:gap-6">
-        <FeatureImg src={PerformanceImage} delay={0.1} />
-        <FeatureImg src={ScalableInfrastructureImage} delay={0.2} />
-        <FeatureImg src={ModularDesignImage} delay={0.3} />
-        <FeatureImg src={ReliabilityImage} delay={0.4} />
+        <motion.div
+          className="mx-auto max-w-3xl grid grid-cols-3 gap-6 lg:gap-12 mb-12 sm:mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <IconWithText src={BoltIcon}>High Performance</IconWithText>
+          <IconWithText src={MonitoringIcon}>Scalable Infrastructure</IconWithText>
+          <IconWithText src={PalleteIcon}>Modular Design</IconWithText>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-4 sm:gap-6 lg:gap-8">
+          <FeatureImg src={PerformanceImage} delay={0.1} />
+          <FeatureImg src={ScalableInfrastructureImage} delay={0.2} />
+          <FeatureImg src={ModularDesignImage} delay={0.3} />
+          <FeatureImg src={ReliabilityImage} delay={0.4} />
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -80,7 +82,7 @@ function IconWithText({ src, children }) {
         className="mx-auto w-10 h-10 sm:w-14 sm:h-14 object-contain"
         alt={children}
       />
-      <div className="mt-2 sm:mt-4">
+      <div className="mt-3 sm:mt-4">
         <h3 className="text-xs sm:text-sm lg:text-base font-semibold text-gray-800 text-center">
           {children}
         </h3>

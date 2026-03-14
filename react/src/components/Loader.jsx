@@ -2,8 +2,8 @@ import Logo from "./Logo";
 
 function Loader() {
   return (
-    <div className="flex flex-col gap-10 w-full h-screen flex items-center justify-center mx-auto my-auto animate-pulse [animation-duration:1.5s]">
-      <div className="animate-pulse">
+    <div className="fixed inset-0 flex items-center justify-center bg-white">
+      <div className="animate-pulse [animation-duration:1.5s]">
         <Logo />
       </div>
     </div>
