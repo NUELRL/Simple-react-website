@@ -1,20 +1,21 @@
 import { motion } from "motion/react";
 import Logo from "../assets/footerlogo.png";
+
 function Footer() {
   return (
     <motion.footer
       className="relative overflow-hidden bg-neutral-900"
-      initial={{ transform: "translateY(90%)" }}
-      transition={{ duration: 1.2 }}
-      whileInView={{ transform: "translateY(0)" }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <svg
-        className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
-        width="2745"
-        height="488"
+        className="absolute -bottom-20 start-1/2 w-full max-w-[1900px] transform -translate-x-1/2"
         viewBox="0 0 2745 488"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
       >
         <path
           d="M0.5 330.864C232.505 403.801 853.749 527.683 1482.69 439.719C2111.63 351.756 2585.54 434.588 2743.87 487"
@@ -99,19 +100,17 @@ function Footer() {
       </svg>
 
       <div className="relative z-10">
-        <div className="w-full max-w-5xl px-4 xl:px-0 py-10 lg:pt-16 mx-auto">
-          <div className="inline-flex items-center">
+        <div className="w-full max-w-5xl px-4 sm:px-6 xl:px-0 py-8 sm:py-10 lg:py-14 mx-auto">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-0">
             <img
               src={Logo}
-              className="w-24 h-auto"
-              width="116"
-              height="32"
-              viewBox="0 0 116 32"
-              fill="none"
+              className="w-20 sm:w-24 h-auto"
+              alt="Jionerd logo"
             />
-
-            <div className="border-s border-neutral-700 ps-5 ms-5">
-              <p className="text-sm text-neutral-400">© JIONERD 2025.</p>
+            <div className="sm:border-s sm:border-neutral-700 sm:ps-5 sm:ms-5">
+              <p className="text-xs sm:text-sm text-neutral-400 text-center sm:text-left">
+                © JIONERD 2026.
+              </p>
             </div>
           </div>
         </div>

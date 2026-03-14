@@ -2,9 +2,6 @@
 import { motion, useScroll } from "motion/react";
 import { useEffect, useState } from "react";
 
-//
-//
-
 import Features from "./components/Features";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
@@ -50,9 +47,10 @@ function App() {
       ></motion.div>
       <Header />
       <Hero />
-      <Features />
+
       <WhyChooseUs />
       <Services />
+
       <Faq />
       <Footer />
     </div>

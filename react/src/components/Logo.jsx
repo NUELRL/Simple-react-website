@@ -9,10 +9,11 @@ const transition = {
 function Logo() {
   return (
     <motion.div
-      className="max-w-7xl mx-auto flex items-center justify-between"
-      initial={{ x: "-100vw" }}
-      animate={{ x: 0 }}
-      transition={transition}
+      className="max-w-7xl mx-auto flex items-center justify-between "
+initial={{ opacity: 0, scale: 0.85 }}
+animate={{ opacity: 1, scale: 1 }}
+transition={{ duration: 0.5, ease: "easeOut" }}
+  
     >
       <a
         href="#"
